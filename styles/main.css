@@ -1,0 +1,6 @@
+
+.vertical-slider {
+  writing-mode: vertical-lr;
+  height: 80px; /* Controls the physical height (the "track" length when horizontal) */
+  rotate: 180deg; /* Flips the slider to have the minimum value at the bottom */
+}
