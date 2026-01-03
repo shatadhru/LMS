@@ -159,11 +159,7 @@ const App = () => {
     playerRef.current = player;
   }, []);
 
-  const handleLoadCustomUrl = () => {
-    if (urlInputRef.current?.value) {
-      setState(prev => ({ ...prev, src: urlInputRef.current.value }));
-    }
-  };
+ 
 
   const {
     src,
