@@ -62,10 +62,12 @@ const App = () => {
   };
   const handleToggleMuted = () => setState(prev => ({ ...prev, muted: !prev.muted }));
   const isVolumeOpenedStart = () => setState(prev => ({ ...prev, isVolumeOpened: !prev.isVolumeOpened }));
-  const handleSetPlaybackRate = (e: React.SyntheticEvent<HTMLButtonElement>) => {
-    const buttonTarget = e.target as HTMLButtonElement;
-    setState(prev => ({ ...prev, playbackRate: parseFloat(`${buttonTarget.dataset.value}`) }));
+  const handleSetPlaybackRate = (e: any) => { // PressEvent or any
+    const target = e.currentTarget as HTMLElement;
+    const value = target.dataset.value;
+    if (value) setState(prev => ({ ...prev, playbackRate: parseFloat(value) }));
   };
+
 
   const handleRateChange = () => {
     const player = playerRef.current;
@@ -264,10 +266,10 @@ const App = () => {
               </DropdownTrigger>
               <DropdownMenu aria-label="Player Settings">
                 <DropdownSection title="Playback Speed">
-                  <DropdownItem onPress={handleSetPlaybackRate} data-value={0.5}>0.5x</DropdownItem>
-                  <DropdownItem onPress={handleSetPlaybackRate} data-value={1}>1x</DropdownItem>
-                  <DropdownItem onPress={handleSetPlaybackRate} data-value={1.5}>1.5x</DropdownItem>
-                  <DropdownItem onPress={handleSetPlaybackRate} data-value={2}>2x</DropdownItem>
+                  <DropdownItem key={0} onPress={handleSetPlaybackRate} data-value={0.5}>0.5x</DropdownItem>
+                  <DropdownItem key={1} onPress={handleSetPlaybackRate} data-value={1}>1x</DropdownItem>
+                  <DropdownItem key={2} onPress={handleSetPlaybackRate} data-value={1.5}>1.5x</DropdownItem>
+                  <DropdownItem key={3} onPress={handleSetPlaybackRate} data-value={2}>2x</DropdownItem>
                 </DropdownSection>
               </DropdownMenu>
             </Dropdown>
