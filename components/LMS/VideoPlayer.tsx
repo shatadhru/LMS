@@ -23,7 +23,7 @@ const items = [
   { key: "delete", label: "Delete file" },
 ];
 
-const App = () => {
+const App = ({link} : {link?: string}) => {
   const playerRef = useRef<HTMLVideoElement | null>(null);
   const urlInputRef = useRef<HTMLInputElement | null>(null);
 
@@ -181,15 +181,15 @@ const App = () => {
   return (
     <div className="app">
       <section className="section">
-        <div className="relative max-w-4xl mx-auto my-4 bg-black">
+        <div className="relative  mx-auto my-4 bg-black">
 
           {/* Player */}
-          <div className="player-wrapper relative z-0">
+          <div className="player-wrapper relative z-0 ">
             <ReactPlayer
               ref={setPlayerRef}
               className="react-player"
-              style={{ width: '100%', height: 'auto', aspectRatio: '16/9', zIndex: 0 }}
-              src="https://youtu.be/L6htfu4sIKQ?list=RDL6htfu4sIKQ"
+              style={{ width: '100%', height: '100%', aspectRatio: '16/9', zIndex: 0 , borderRadius: '20px' }}
+              src={link || "https://youtu.be/L6htfu4sIKQ?list=RDL6htfu4sIKQ"}
               pip
               playing={playing}
               controls={controls}
@@ -225,7 +225,7 @@ const App = () => {
           </div>
 
           {/* Transparent overlay */}
-          <div className="absolute inset-0 z-10 bg-black/10 pointer-events-auto" onClick={handlePlayPause} // overlay click toggles play/pause
+          <div className="absolute rounded-4xl inset-0 z-10 bg-black/10 pointer-events-auto" onClick={handlePlayPause} // overlay click toggles play/pause
 >
             {/* Block only left back button */}
             <div
@@ -278,7 +278,7 @@ const App = () => {
           </div>
 
           {state.isVolumeOpened && (
-            <div className="absolute flex flex-col items-center justify-center gap-2 right-1 bottom-0">
+            <div className="absolute flex flex-col items-center justify-center gap-2 right-1 bottom-0 z-40">
               <input
                 id="volume"
                 type="range"

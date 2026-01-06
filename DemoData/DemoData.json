@@ -1,0 +1,49 @@
+{
+  "content": [
+    {
+      "class": "Class 11",
+      "subjects": [
+        {
+          "subject": "Physics",
+          "classes": [
+            {
+              "name": "Newton's First Law",
+              "youtubeLink": "https://youtu.be/PNUCpdpOgrk?list=RDPNUCpdpOgrk"
+            },
+            {
+              "name": "Newton's Second Law",
+              "youtubeLink": "https://youtu.be/5gm4GhUhBBw"
+            }
+          ]
+        },
+        {
+          "subject": "Chemistry",
+          "classes": [
+            {
+              "name": "Atomic Structure",
+              "youtubeLink": "https://youtu.be/U3pYFeLpeFc?list=RDU3pYFeLpeFc"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "class": "Class 12",
+      "subjects": [
+        {
+          "subject": "Mathematics",
+          "classes": [
+            {
+              "name": "Integration Basics",
+              "youtubeLink": "https://youtu.be/tshf5mY2DuA?list=RDtshf5mY2DuA"
+            },
+            {
+              "name": "Differentiation",
+              "youtubeLink": "https://youtu.be/6PlCLtyo8n4?list=RD6PlCLtyo8n4"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
